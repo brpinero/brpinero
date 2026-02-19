@@ -25,12 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Crear archivo con fecha y hora
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          # Generamos la fecha y la guardamos en un archivo .txt
+          date +"%Y-%m-%d %H:%M:%S" > ejecucion.txt
+          echo "Archivo creado exitosamente."
+
+      - name: Leer y mostrar el contenido del archivo
+        run: |
+          echo "Contenido del archivo generado:"
+          cat ejecucion.txt
+          
