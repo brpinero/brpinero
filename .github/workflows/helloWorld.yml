@@ -25,11 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Crear archivo con fecha y hora
+      - name: Guardando fecha
         run: |
           # Generamos la fecha y la guardamos en un archivo .txt
-          date +"%Y-%m-%d %H:%M:%S" > ejecucion.txt
-          echo "Archivo creado exitosamente."
+          date +"%Y-%m-%d %H:%M:%S" >> ejecucion.txt
+          echo "Fecha guardada."
 
       - name: Leer y mostrar el contenido del archivo
         run: |
